@@ -115,7 +115,7 @@ printVerify($blockchain); // Check the integrity of the chain
 As a result of executing this code, at the very end we will receive the message:
 ```
 Chain verification: error in block #2
-``
+```
 
 Next, I provided a function for comparing two block chains, which is necessary if you need to compare data stored in several separate databases.
 When comparing, two chains of incoming functions are verified first, and then the number of blocks and the hashes of the last block are compared.
