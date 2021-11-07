@@ -1,17 +1,17 @@
 <?php
 require_once(__DIR__.'/block.php'); // Подключаем библиотеку
-$BlockChain = array(); // Объявляем массив блоков
+$blockChain = array(); // Объявляем массив блоков
 
 for ($i = 0; $i < 5; $i++) { // Создаем 5 блоков
-	$BlockChain = addBlock($BlockChain, "Данные " . $i); // Создаем блок
-	printBlock($BlockChain, $i); // Выводим данные
-	printVerify($BlockChain); // Проверяем целосность цепочки
+	$blockChain = addBlock("Данные $i", $blockChain); // Создаем блок
+	printBlock($i, $blockChain); // Выводим данные
+	printVerify($blockChain); // Проверяем целосность цепочки
 	echo "\n";
 }
 
 echo "Измененные данные\n";
-$BlockChain[2]->data = "Измененные данные"; // Изменяем данные
-printBlock($BlockChain, 2); // Выводим данные
-printVerify($BlockChain); // Проверяем целосность цепочки
+$blockChain[2]->data = "Измененные данные"; // Изменяем данные
+printBlock(2, $blockChain); // Выводим данные
+printVerify($blockChain); // Проверяем целосность цепочки
 
 ?>
