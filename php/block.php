@@ -1,7 +1,6 @@
 <?php
 
-class block
-{
+class block {
     public $previousHash;
     public $timestamp;
     public $data;
