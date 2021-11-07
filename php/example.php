@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__.'/block.php'); // Подключаем библиотеку
+require_once(__DIR__ . '/block.php'); // Подключаем библиотеку
 
 $blockChain = array(); // Объявляем массив блоков
 
