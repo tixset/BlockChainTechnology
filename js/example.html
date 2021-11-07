@@ -1,0 +1,17 @@
+<script src="md5.js"></script>
+<script src="block.js"></script>
+<script>
+blockChain = new Array(); // Объявляем массив блоков
+
+for (i = 0; i < 5; i++) { // Создаем 5 блоков
+	blockChain = addBlock("Данные " + i, blockChain); // Создаем блок
+	printBlock(i, blockChain); // Выводим данные
+	printVerify(blockChain); // Проверяем целосность цепочки
+	console.log("");
+}
+
+console.log("Измененные данные");
+blockChain[2].data = "Измененные данные"; // Изменяем данные
+printBlock(2, blockChain); // Выводим данные
+printVerify(blockChain); // Проверяем целосность цепочки
+</script>
