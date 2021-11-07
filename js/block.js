@@ -8,6 +8,12 @@ CLASSES.block = class block {
     }
 }
 
+function timestampToDate(ts) {
+    var d = new Date();
+    d.setTime(ts);
+    return  d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2) + " " + ('0' + d.getHours()).slice(-2) + ':' + ('0' + d.getMinutes()).slice(-2) + ':' + ('0' + d.getSeconds()).slice(-2);
+}
+
 function addBlock(data, blockChain) {
 	count = blockChain.length;
 	previousHash = count == 0 ? "" : blockChain[count - 1].hash;
@@ -38,12 +44,6 @@ function chainsCompare(blockChain1, blockChain2) {
 	if (!chainVerify(blockChain2)) return 0;
 	if (blockChain1.length != blockChain2.length) return 0;
 	return blockChain1[blockChain1.length - 1].hash == blockChain2[blockChain2.length - 1].hash ? 1 : 0;
-}
-
-function timestampToDate(ts) {
-    var d = new Date();
-    d.setTime(ts);
-    return  d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2) + " " + ('0' + d.getHours()).slice(-2) + ':' + ('0' + d.getMinutes()).slice(-2) + ':' + ('0' + d.getSeconds()).slice(-2);
 }
 
 function printBlock(id, blockChain) {
