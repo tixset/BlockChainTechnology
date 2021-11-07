@@ -35,7 +35,7 @@ function chainVerify($blockChain) {
 	return $res;
 }
 
-function chainsСompare($blockChain1, $blockChain2) {
+function chainsCompare($blockChain1, $blockChain2) {
 	if (!chainVerify($blockChain1)) return 0;
 	if (!chainVerify($blockChain2)) return 0;
 	if (count($blockChain1) != count($blockChain2)) return 0;
