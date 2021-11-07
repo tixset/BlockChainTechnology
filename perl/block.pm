@@ -1,6 +1,6 @@
 #!/usr/bin/perl
-package block; {
 
+package block; {
 	sub new {
 		my($class) = @_;
 		my $self = {
