@@ -1,6 +1,6 @@
 <?php
 
-class BlockChain
+class Block
 {
     public $previousHash;
     public $timestamp;
@@ -9,7 +9,7 @@ class BlockChain
 }
 
 function addBlock($BlockChain, $data) {
-	$BlockChain[] = new BlockChain();
+	$BlockChain[] = new Block();
 	$count = count($BlockChain);
 	$Block = $BlockChain[$count - 1];
 	if ($count != 1) $Block->previousHash = $BlockChain[$count - 2]->hash;
@@ -53,7 +53,7 @@ function printBlock($BlockChain, $id) {
 
 function printVerify($BlockChain) {
 	$res = chainVerify($BlockChain);
-	echo $res == 0 ? "Верификация: ok\n" : "Верификация: ошибка в записи #". $res . "\n";
+	echo $res == 0 ? "Верификация цепочки: ok\n" : "Верификация цепочки: ошибка в блоке #". $res . "\n";
 }
 
 ?>
